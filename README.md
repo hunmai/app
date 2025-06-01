@@ -1,1 +1,1 @@
-# [download](https://hunmai.github.io/apps)
+# https://hunmai.github.io/apps
