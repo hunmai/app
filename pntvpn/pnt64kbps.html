@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>အင်တာနက်ဖရီး သုံးဖို့ စမတ်နည်းများ</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" id="bootstrap-icons">
+    <style>
+        video {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+        .card-title {
+            font-size: 1rem;
+        }
+        .title { color: black; }
+        .dtac { color: blue; }
+        .true { color: red; }
+        .ais { color: green; }
+        .translate-btn {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .toggle-btn {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .toggle-btn i {
+            margin-left: 8px;
+        }
+        .toggle-btn .bi-chevron-up {
+            display: none;
+        }
+        .toggle-btn .bi-chevron-down {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Translate Button -->
+        <div class="translate-btn">
+            <div id="google_translate_element"></div>
+        </div>
+
+        <header class="my-4">
+            <h class="card-title">•True Dtac Ais 64Kbps ပက်ကေ့ဝယ်နည်း</h>
+        </header>
+
+        <div class="row">
+            <!-- Dtac Card -->
+            <div class="col-md-4 dtac-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <img src="https://www.dtac.co.th/dtac-library/assets/img/icons/ico-dtac.png" alt="Dtac Logo" class="card-img-center" style="max-height: 50px; width: auto;">
+                        <p>Dtac ဆင်းမ်ကဒ်သုံးတယ်ဆိုရင်ဒီအောက်ကပက်ကေ့ကိုစမတ်ပြီးမှ VPN နဲ့ချိတ်သုံးလို့ရပါမယ် </p>
+                        <button class="btn btn-outline-primary toggle-btn" type="button" data-toggle="collapse" data-target="#dtacLayout" aria-expanded="false" aria-controls="dtacLayout">
+                            Dtac ဆင်းမ်အတွက် ဖတ်ရန် 
+                            <i class="bi bi-chevron-down"></i>
+                            <i class="bi bi-chevron-up"></i>
+                        </button>
+                        
+                        <div class="layout collapse" id="dtacLayout">
+                            <p>Dtac 64Kbps - ပက်ကေ့ 30 ဘတ် /30 ရက်</p>
+                            
+                            <p><b>*117*30#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*117*30%23'">စမတ်ရန် နှိပ်ပါ</button></p>                                                                                                   
+                            <p>ပက်ကေ့ဝယ်ပြီးရင် VPN နဲ့ချိတ်သုံးရပါမယ်</p>
+
+                                                                                                                
+                        </div>
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- True Card -->
+            <div class="col-md-4 true-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <img src="https://topping.truemoveh.com/assets/static/images/icon_fb&true@3x.82de9630.png" alt="True Logo" class="card-img-center" style="max-height: 30px; width: auto;">
+                        <p>True ဆင်းမ်ကဒ်သုံးတယ်ဆိုရင်ဒီအောက်ကပက်ကေ့ကိုစမတ်ပြီးမှ VPN နဲ့ချိတ်သုံးလို့ရပါမယ် </p>
+                        <button class="btn btn-outline-primary toggle-btn" type="button" data-toggle="collapse" data-target="#trueLayout" aria-expanded="false" aria-controls="trueLayout">
+                            TrueMove ဆင်းမ်အတွက် ဖတ်ရန် 
+                            <i class="bi bi-chevron-down"></i>
+                            <i class="bi bi-chevron-up"></i>
+                        </button>
+                        <div class="layout collapse" id="trueLayout">
+                            <p>True 64Kbps - ပက်ကေ့ 30 ဘတ် / 30 ရက်</p>
+                            <p><b>*900*8131#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*900*8131%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>(ပက်ကေ့ဝယ်ပြီးရင် VPN နဲ့တွဲချိတ်လို့ရပါပြီ)</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AIS Card -->
+            <div class="col-md-4 ais-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBwSTp4vgOVqME3OlQ30ghtLyl08fqw1xsemUKEdPNm937DFZ4CZlI_Zcn&s=10" alt="Ais Logo" class="card-img-center" style="max-height: 50px; width: auto;">
+                        <p>Ais ဆင်းမ်ကဒ်သုံးတယ်ဆိုရင်ဒီအောက်ကပက်ကေ့ကိုစမတ်ပြီးမှ VPN နဲ့ချိတ်သုံးလို့ရပါမယ် </p>
+                        <button class="btn btn-outline-primary toggle-btn" type="button" data-toggle="collapse" data-target="#aisLayout" aria-expanded="false" aria-controls="aisLayout">
+                            Ais ဆင်းမ်အတွက် ဖတ်ရန် 
+                            <i class="bi bi-chevron-down"></i>
+                            <i class="bi bi-chevron-up"></i>
+                        </button>
+                        <div class="layout collapse" id="aisLayout">
+                            <p>Ais 64kbps - 32 ဘတ် / 30ရက်</p>
+                            <p><b>*777*7067#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*777*7067%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>(ပက်ကေ့ဝယ်ပြီးရင် VPN နဲ့တွဲချိတ်လို့ရပါပြီ)</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+                        
+                        
+                  </div>
+                </div>
+            </div>
+
+            
+            
+            
+            
+        </div>
+
+        <footer class="text-center mt-4">
+            <p>© 64Kbps ပက်ကေ့ဝယ်နည်းများ</p>
+        </footer>
+    </div>
+
+    <!-- Google Translate script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'my',
+                includedLanguages: 'en,th,mm',
+                layout: google.translate.TranslateElement.InlineLayout.DROPDOWN
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        // Check if Bootstrap Icons CSS is loaded
+        window.addEventListener('load', () => {
+            const iconSheet = document.getElementById('bootstrap-icons');
+            if (!iconSheet || !window.getComputedStyle(document.documentElement).getPropertyValue('--bs-icon-font')) {
+                console.warn('Bootstrap Icons CSS failed to load. Consider using a local copy.');
+                // Fallback: Load from an alternative source or local file (uncomment if you have a local copy)
+                // const link = document.createElement('link');
+                // link.rel = 'stylesheet';
+                // link.href = 'path/to/local/bootstrap-icons.css';
+                // document.head.appendChild(link);
+            }
+        });
+
+        function isWebView() {
+            let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            return /wv|WebView/i.test(userAgent);
+        }
+
+        function openInBrowser() {
+            window.location.href = "https://topping.truemoveh.com/";
+            if (isWebView()) {
+                window.location.href = "https://topping.truemoveh.com/";
+            }
+        }
+
+        // Toggle icon visibility for True and AIS collapse buttons
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            const target = document.querySelector(button.getAttribute('data-target'));
+            const downIcon = button.querySelector('.bi-chevron-down');
+            const upIcon = button.querySelector('.bi-chevron-up');
+
+            target.addEventListener('show.bs.collapse', () => {
+                console.log('Collapse shown for:', button.getAttribute('data-target'));
+                downIcon.style.display = 'none';
+                upIcon.style.display = 'inline-block';
+            });
+            target.addEventListener('hide.bs.collapse', () => {
+                console.log('Collapse hidden for:', button.getAttribute('data-target'));
+                downIcon.style.display = 'inline-block';
+                upIcon.style.display = 'none';
+            });
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
