@@ -1,52 +1,260 @@
 <!DOCTYPE html>
-
-.vertical-center {
-  margin: 0px;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}        
-.layout {
-            margin-top: 20px;
-            text-align: center;
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>အင်တာနက်ဖရီး သုံးဖို့ စမတ်နည်းများ</title>
+    <!-- Bootstrap 5 and Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', Arial, sans-serif; background: #f9faff; }
+        .navbar-brand { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; letter-spacing: 1px; }
+        .card-title { font-size: 1.1rem; }
+        .dtac { color: #007bff; }
+        .true { color: #e60012; }
+        .ais { color: #00b900; }
+        .img-thumbnail { margin-bottom: 8px; }
+        
+        /* Enhanced Toggle Button Styles */
+        .toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-weight: 500;
+            border-radius: 12px;
+            padding: 12px 18px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 100%);
         }
         
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Arrow Icon Styles */
+        .collapse-icon {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-size: 1.2rem;
+            color: inherit;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .toggle-btn[aria-expanded="true"] .collapse-icon {
+            transform: rotate(180deg);
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Different colored buttons */
+        .btn-outline-primary.toggle-btn {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            border: none;
+        }
+        
+        .btn-outline-primary.toggle-btn:hover {
+            background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+            color: white;
+        }
+        
+        .btn-outline-danger.toggle-btn {
+            background: linear-gradient(135deg, #e60012 0%, #b8000e 100%);
+            color: white;
+            border: none;
+        }
+        
+        .btn-outline-danger.toggle-btn:hover {
+            background: linear-gradient(135deg, #b8000e 0%, #8a000a 100%);
+            color: white;
+        }
+        
+        .btn-outline-success.toggle-btn {
+            background: linear-gradient(135deg, #00b900 0%, #008f00 100%);
+            color: white;
+            border: none;
+        }
+        
+        .btn-outline-success.toggle-btn:hover {
+            background: linear-gradient(135deg, #008f00 0%, #006600 100%);
+            color: white;
+        }
+        
+        /* Collapse content animation */
+        .collapse {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .section-title { font-size: 1.14rem; font-weight: 500; }
+        
+        /* Pulse animation for buttons */
+        @keyframes pulse {
+            0% { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+            100% { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        }
+        
+        .toggle-btn:focus {
+            animation: pulse 0.6s ease-in-out;
+        }
+        
+        @media (max-width: 767px) {
+            .card { margin-bottom: 1.5rem; }
+            .toggle-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            .collapse-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 1rem;
+            }
+        }
     </style>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://raw.githubusercontent.com/hunmai/app/refs/heads/main/icon/icon_pnt.png" alt="SVPN Logo" style="width:36px; height:auto;">
+                PNT VPN
+            </a>
             
-        <div class="layout">     
-          <button type="button" class="btn btn-outline-success" onclick="window.location.href='http://online.hunmai.site:80/pukang.php';">PUKANG VPN Users Online</button>
-         </div>
-         
-         <div class="layout">     
-          <button type="button" class="btn btn-outline-success" onclick="window.location.href='http://online.hunmai.site:80/kham.php/online';">KHAM VPN Users Online</button>
-         </div>
-
-       <div class="layout">     
-          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='https://hunmai.site/Package/sim.html';">SIM သက်တမ်းတိုးနည်း</button>
-         </div>
-         
-         <div class="layout">     
-          <button type="button" class="btn btn-outline-primary" onclick="window.location.href='https://hunmai.site/Package/64kbps.html';">ပက်ကေ့ဝယ်နည်</button>
-         </div>
-                        
-                  </div>
-                </div>
-              </footer>
+            
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-3">
+        <header class="my-4">
+            
+        </header>
+        
+        <!-- Online User Card -->
+        <div class="row justify-content-center">
+            <div class="col-md-4 ais-section">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <a class="btn btn-outline-primary" href="http://online.hunmai.site:80/pnt.php" target="_blank">
+                            🟢 PNT VPN Online User 
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
+        
+        <!-- PNT VPN Download Card -->
+        <div class="row justify-content-center">
+            <div class="col-md-4 ais-section">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="https://raw.githubusercontent.com/hunmai/app/refs/heads/main/icon/icon_pnt.png" alt="SVPN Logo" style="max-height: 50px; width: auto;">
+                        <p class="mt-2 mb-3">PNT VPN မရှိသေးရင် ဒေါင်းရန်</p>
+                        <a class="btn btn-outline-primary" href="https://play.google.com/store/apps/details?id=com.pntvpn.net" target="_blank">
+                            PNT VPN ဒေါင်းရန် နှိပ်ပါ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Dtac Card -->
+            <div class="col-md-4 dtac-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="https://www.dtac.co.th/dtac-library/assets/img/icons/ico-dtac.png" alt="Dtac Logo" style="max-height: 38px; width: auto;" class="me-2">
+                            <span class="section-title dtac">Dtac</span>
+                        </div>
+                        <p>Dtac ဆင်းမ်ကဒ်သုံးတယ်ဆိုရင် ဒီအောက်က ပက်ကေ့ကို စမတ်ပြီးမှ VPN ချိတ်သုံးလို့ရပါတယ် </p>
+                        <button class="btn btn-outline-primary w-100 toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#dtacLayout" aria-expanded="false" aria-controls="dtacLayout">
+                            <span>Dtac ဆင်းမ်အတွက် ဖတ်ရန်</span>
+                            <i class="bi bi-chevron-down collapse-icon"></i>
+                        </button>
+                        
+                        <div class="collapse mt-2" id="dtacLayout">
+                            <p>Jaidee 64kbps ပက်ကေ့ - 30ရက် / 30ဘတ်</p>
+                            <p><b>*117*30#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*117*30%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>(Jaidee ပက်ကေ့ စမတ်ပြီးရင် Dtac Jaidee ဖိုင်ကို ရွေးပြီး ချိတ်ပါဗျ)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- True Card -->
+            <div class="col-md-4 true-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="https://topping.truemoveh.com/assets/static/images/icon_fb&true@3x.82de9630.png" alt="True Logo" style="max-height: 30px; width: auto;" class="me-2">
+                            <span class="section-title true">True</span>
+                        </div>
+                        <p>True ဆင်းမ်ကဒ်သုံးတယ်ဆိုရင် အောက်က ပက်ကေ့ တစ်ခုခုကို စမတ်ပြီးမှ VPN ချိတ်သုံးလို့ရမှာပါ </p>
+                        <button class="btn btn-outline-danger w-100 toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#trueLayout" aria-expanded="false" aria-controls="trueLayout">
+                            <span>TrueMove ဆင်းမ်အတွက် ဖတ်ရန်</span>
+                            <i class="bi bi-chevron-down collapse-icon"></i>
+                        </button>
+                        <div class="collapse mt-2" id="trueLayout">
+                            <p>ပထမနည်း - VDO ပက်ကေ့ 54 ဘတ် / 30 ရက်</p>
+                            <p><b>*900*1347#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*900*1347%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>(VDO ပက်ကေ့ စမတ်ပြီးရင် True VDO ဖိုင်ကို ရွေးပြီး ချိတ်ပါဗျ)</p>
+                            <p class="mt-4">ဒုတိယနည်း - Viber ပက်ကေ့</p>
+                            <p>6 ဘတ် / 1 ရက် <br> <b>*900*3912#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*900*3912%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>21 ဘတ် / 7 ရက် <br> <b>*900*3913#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*900*3913%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>53 ဘတ် / 30 ရက် <br> <b>*900*3809#</b> <button class="btn btn-primary btn-sm" onclick="location.href='tel:*900*3809%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>(Viber ပက်ကေ့ စမတ်ပြီးရင် True Viber ဖိုင်ကို ရွေးပြီး ချိတ်ပါဗျ)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- AIS Card -->
+            <div class="col-md-4 ais-section">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBwSTp4vgOVqME3OlQ30ghtLyl08fqw1xsemUKEdPNm937DFZ4CZlI_Zcn&s=10" alt="Ais Logo" style="max-height: 38px; width: auto;" class="me-2">
+                            <span class="section-title ais">AIS</span>
+                        </div>
+                        <p>Ais ဆင်းမ် သုံးပါက အောက်က ပက်ကေ့နှစ်ခုလုံး စမတ်ပေးဖို့ လိုအပ်ပါတယ် </p>
+                        <button class="btn btn-outline-success w-100 toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#aisLayout" aria-expanded="false" aria-controls="aisLayout">
+                            <span>Ais ဆင်းမ်အတွက် ဖတ်ရန်</span>
+                            <i class="bi bi-chevron-down collapse-icon"></i>
+                        </button>
+                        <div class="collapse mt-2" id="aisLayout">
+                            <p>ပင်မပရိုမိုးရှင်း နှင့် Ais play ပရိုမိုးရှင်း နှစ်ခုလုံး စမတ်ပြီးရင် Ais_Play ဖိုင်ကို ရွေးချိတ်သုံးပါ</p>
+                            <p>ပင်မ ပရိုမိုးရှင်း 64kbps - 32 ဘတ် / 30ရက်</p>
+                            <p><b>*777*7067#</b> <button class="btn btn-success btn-sm" onclick="location.href='tel:*777*7067%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p>Ais Play ပရိုမိုးရှင်း - 64 ဘတ် / 30 ရက်</p>
+                            <p><b>*777*885#</b> <button class="btn btn-success btn-sm" onclick="location.href='tel:*777*885%23'">စမတ်ရန် နှိပ်ပါ</button></p>
+                            <p class="true">မှတ်ချက်။ ပရိုမိုးရှင်း နှစ်ခုလုံး စမတ်ပြီးမှ သုံးလို့ရပါတယ်ခင်ဗျာ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <footer class="text-center mt-4">
-            <p>&copy;VPN APP 2024-2025</p>
+            <p>© 2025 အင်တာနက်ဖရီး ပရိုမိုးရှင်းများ</p>
         </footer>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
