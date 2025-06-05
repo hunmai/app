@@ -645,7 +645,7 @@ perform_install_manager_script() {
     local _symlink_path="/usr/local/bin/agnudp"
     
     echo "Downloading manager script..."
-    curl -o "$_manager_script" "https://github.com/khaledagn/AGN-UDP/raw/main/agnudp_manager.sh"
+    curl -o "$_manager_script" "https://raw.githubusercontent.com/hunmai/app/refs/heads/main/udp/agnudp_manager.sh"
     chmod +x "$_manager_script"
     
     echo "Creating symbolic link to run the manager script using 'agnudp' command..."
@@ -720,18 +720,16 @@ perform_install() {
 
     if [[ -n "$_is_fresh_install" ]]; then
         echo
-        echo -e "$(tbold)Congratulations! AGN-UDP has been successfully installed on your server.$(treset)"
+        echo -e "$(tbold)Congratulations! PNT-UDP has been successfully installed on your server.$(treset)"
         echo "Use 'agnudp' command to access the manager."
 
         echo
-        echo -e "$(tbold)Client app AGN INJECTOR:$(treset)"
-        echo -e "$(tblue)https://play.google.com/store/apps/details?id=com.agn.injector$(treset)"
+        echo -e "$(tbold)Client app pnt vpn:$(treset)"
+        echo -e "$(tblue)https://play.google.com/store/apps/details?id=com.pntvpn.net$(treset)"
         echo
         echo -e "Follow me!"
         echo
-        echo -e "\t+ Check out my website at $(tblue)https://www.khaledagn.me$(treset)"
-        echo -e "\t+ Follow me on Telegram: $(tblue)https://t.me/khaledagn$(treset)"
-        echo -e "\t+ Follow me on Facebook: $(tblue)https://facebook.com/itskhaledagn$(treset)"
+        echo -e "\t+ Check out my Page at $(tblue)https://www.facebook.com/share/1ARS7J4yXp/$(treset)"
         echo
     else
         restart_running_services

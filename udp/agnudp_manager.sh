@@ -85,64 +85,63 @@ change_obfs() {
 }
 
 change_up_speed() {
-    echo -e "\n\e[1;34mEnter new upload speed (Mbps):\e[0m"
+    echo -e "\n\e[1;34mป้อนความเร็วอัพโหลดใหม่ (Mbps):\e[0m"
     read -r up_speed
     jq ".up_mbps = $up_speed" "$CONFIG_FILE" > "${CONFIG_FILE}.tmp" && mv "${CONFIG_FILE}.tmp" "$CONFIG_FILE"
     jq ".up = \"$up_speed Mbps\"" "$CONFIG_FILE" > "${CONFIG_FILE}.tmp" && mv "${CONFIG_FILE}.tmp" "$CONFIG_FILE"
-    echo -e "\e[1;32mUpload speed changed to $up_speed Mbps successfully.\e[0m"
+    echo -e "\e[1;32mความเร็วในการอัพโหลดเปลี่ยนเป็น $up_speed Mbps เรียบร้อยแล้ว.\e[0m"
     restart_server
 }
 
 change_down_speed() {
-    echo -e "\n\e[1;34mEnter new download speed (Mbps):\e[0m"
+    echo -e "\n\e[1;34mป้อนความเร็วการดาวน์โหลดใหม่ (Mbps):\e[0m"
     read -r down_speed
     jq ".down_mbps = $down_speed" "$CONFIG_FILE" > "${CONFIG_FILE}.tmp" && mv "${CONFIG_FILE}.tmp" "$CONFIG_FILE"
     jq ".down = \"$down_speed Mbps\"" "$CONFIG_FILE" > "${CONFIG_FILE}.tmp" && mv "${CONFIG_FILE}.tmp" "$CONFIG_FILE"
-    echo -e "\e[1;32mDownload speed changed to $down_speed Mbps successfully.\e[0m"
+    echo -e "\e[1;32mความเร็วในการดาวน์โหลดเปลี่ยนเป็น$ลดความเร็ว Mbps สำเร็จ\e[0m"
     restart_server
 }
 
 restart_server() {
     systemctl restart hysteria-server
-    echo -e "\e[1;32mServer restarted successfully.\e[0m"
+    echo -e "\e[1;32mเซิร์ฟเวอร์รีสตาร์ทสำเร็จแล้ว.\e[0m"
 }
 
 uninstall_server() {
-    echo -e "\n\e[1;34mUninstalling AGN-UDP server...\e[0m"
+    echo -e "\n\e[1;34mกำลังถอนการติดตั้งเซิร์ฟเวอร์ PNT-UDP...\e[0m"
     systemctl stop hysteria-server
     systemctl disable hysteria-server
     rm -f "$SYSTEMD_SERVICE"
     systemctl daemon-reload
     rm -rf "$CONFIG_DIR"
     rm -f /usr/local/bin/hysteria
-    echo -e "\e[1;32mAGN-UDP server uninstalled successfully.\e[0m"
+    echo -e "\e[1;32mPNT-UDP ถอนการติดตั้งเซิร์ฟเวอร์สำเร็จแล้ว\e[0m"
 }
 
 show_banner() {
     echo -e "\e[1;36m---------------------------------------------"
-    echo " AGNUDP Manager"
-    echo " (c) 2023 Khaled AGN"
-    echo " Telegram: @khaledagn"
+    echo " PNTUDP Manager,"
+    echo " (c) 2024 pnt vpn"
     echo "---------------------------------------------\e[0m"
 }
 
 show_menu() {
     echo -e "\e[1;36m----------------------------"
-    echo " AGNUDP Manager"
+    echo " PNTUDP Manager"
     echo -e "----------------------------\e[0m"
-    echo -e "\e[1;32m1. Add new user"
-    echo "2. Edit user password"
-    echo "3. Delete user"
-    echo "4. Show users"
-    echo "5. Change domain"
-    echo "6. Change obfuscation string"
-    echo "7. Change upload speed"
-    echo "8. Change download speed"
-    echo "9. Restart server"
-    echo "10. Uninstall server"
-    echo -e "11. Exit\e[0m"
+    echo -e "\e[1;32m1. เพิ่มผู้ใช้ใหม่"
+    echo "2. แก้ไขรหัสผ่านผู้ใช้"
+    echo "3. ลบผู้ใช้"
+    echo "4. แสดงผู้ใช้งาน"
+    echo "5. เปลี่ยนโดเมน"
+    echo "6. เปลี่ยนสตริงการบดบัง"
+    echo "7. เปลี่ยนความเร็วการอัพโหลด"
+    echo "8. เปลี่ยนความเร็วในการดาวน์โหลด"
+    echo "9. รีสตาร์ทเซิร์ฟเวอร์"
+    echo "10. ถอนการติดตั้งเซิร์ฟเวอร์"
+    echo -e "11. ออก\e[0m"
     echo -e "\e[1;36m----------------------------"
-    echo -e "Enter your choice: \e[0m"
+    echo -e "กรุณาระบุตัวเลือกของคุณ: \e[0m"
 }
 
 show_banner
@@ -161,6 +160,6 @@ while true; do
         9) restart_server ;;
         10) uninstall_server; exit 0 ;;
         11) exit 0 ;;
-        *) echo -e "\e[1;31mInvalid choice. Please try again.\e[0m" ;;
+        *) echo -e "\e[1;31mตัวเลือกไม่ถูกต้อง กรุณาลองอีกครั้ง.\e[0m" ;;
     esac
 done
