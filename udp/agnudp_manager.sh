@@ -108,26 +108,27 @@ restart_server() {
 }
 
 uninstall_server() {
-    echo -e "\n\e[1;34mUninstalling AGN-UDP server...\e[0m"
+    echo -e "\n\e[1;34mUninstalling PNT-UDP server...\e[0m"
     systemctl stop hysteria-server
     systemctl disable hysteria-server
     rm -f "$SYSTEMD_SERVICE"
     systemctl daemon-reload
     rm -rf "$CONFIG_DIR"
     rm -f /usr/local/bin/hysteria
-    echo -e "\e[1;32mAGN-UDP server uninstalled successfully.\e[0m"
+    echo -e "\e[1;32mPNT-UDP server uninstalled successfully.\e[0m"
 }
 
 show_banner() {
     echo -e "\e[1;36m---------------------------------------------"
-    echo " PNTUDP Manager,"
+    echo " PNT UDP Script"
     echo " (c) 2024 pnt vpn"
+    echo " Telegram: @ovpnth"
     echo "---------------------------------------------\e[0m"
 }
 
 show_menu() {
     echo -e "\e[1;36m----------------------------"
-    echo " PNTUDP Manager"
+    echo " PNT UDP Script"
     echo -e "----------------------------\e[0m"
     echo -e "\e[1;32m1. เพิ่มผู้ใช้ใหม่"
     echo "2. แก้ไขรหัสผ่านผู้ใช้"
