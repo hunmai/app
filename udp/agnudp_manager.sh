@@ -108,27 +108,27 @@ restart_server() {
 }
 
 uninstall_server() {
-    echo -e "\n\e[1;34mUninstalling PNT-UDP server...\e[0m"
+    echo -e "\n\e[1;34mUninstalling AGN-UDP server...\e[0m"
     systemctl stop hysteria-server
     systemctl disable hysteria-server
     rm -f "$SYSTEMD_SERVICE"
     systemctl daemon-reload
     rm -rf "$CONFIG_DIR"
     rm -f /usr/local/bin/hysteria
-    echo -e "\e[1;32mPNT-UDP server uninstalled successfully.\e[0m"
+    echo -e "\e[1;32mAGN-UDP server uninstalled successfully.\e[0m"
 }
 
 show_banner() {
     echo -e "\e[1;36m---------------------------------------------"
-    echo " PNT UDP Script"
-    echo " (c) 2023 pnt vpn"
-    echo " Telegram: @ovpnth"
+    echo " AGNUDP Manager"
+    echo " (c) 2023 Khaled AGN"
+    echo " Telegram: @khaledagn"
     echo "---------------------------------------------\e[0m"
 }
 
 show_menu() {
     echo -e "\e[1;36m----------------------------"
-    echo " PNTUDP Manager"
+    echo " AGNUDP Manager"
     echo -e "----------------------------\e[0m"
     echo -e "\e[1;32m1. Add new user"
     echo "2. Edit user password"
