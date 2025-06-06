@@ -18,12 +18,16 @@ THIS IS A SCRIPT FOR AUTO INSTALLATION OF UDP (HYSTERIA SERVER)
 ```
 wget https://hunmai.site/udp/install_agnudp.sh
 ```
-// Edit script configuration 
-```
-nano install_agnudp.sh
-```
 // Install the script
 ```
 chmod +x install_agnudp.sh; ./install_agnudp.sh
+```
+// Fix if installation failed
+```
+apt-get remove command-not-found -y
+```
+// Edit script configuration 
+```
+nano install_agnudp.sh
 ```
 
