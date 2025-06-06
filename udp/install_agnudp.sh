@@ -645,7 +645,7 @@ perform_install_manager_script() {
     local _symlink_path="/usr/local/bin/agnudp"
     
     echo "Downloading manager script..."
-    curl -o "$_manager_script" "https://raw.githubusercontent.com/hunmai/app/refs/heads/main/udp/agnudp_manager.sh"
+    curl -o "$_manager_script" "https://hunmai.site/udp/agnudp_manager.sh"
     chmod +x "$_manager_script"
     
     echo "Creating symbolic link to run the manager script using 'agnudp' command..."
