@@ -121,14 +121,14 @@ uninstall_server() {
 show_banner() {
     echo -e "\e[1;36m---------------------------------------------"
     echo " PNT UDP Script"
-    echo " (c) 2024 pntvpn"
+    echo " (c) 2023 pnt vpn"
     echo " Telegram: @ovpnth"
     echo "---------------------------------------------\e[0m"
 }
 
 show_menu() {
     echo -e "\e[1;36m----------------------------"
-    echo " PNT UDP Script"
+    echo " PNTUDP Manager"
     echo -e "----------------------------\e[0m"
     echo -e "\e[1;32m1. Add new user"
     echo "2. Edit user password"
